@@ -20,24 +20,33 @@
             background: #232323;
         }
         h3 {
-            width: 100%; margin: 0; padding: 3px 30px;
+            width: 100%;max-width: 100%; margin: 0; padding: 3px 0;
             font-size: 16px; color: #ccc; text-align: center;
             background: #232323;
         }
 
         /* Ресурсы Таблица START */
-        .resTable {
-            margin: 30px 0;
+        .resourses {
+            margin: 20px auto 30px;
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+        }
+        .resItemSpace {margin-left: 10px;}
+        .resTable {
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: flex-start;
             gap: 2px;
         }
-        .resTable>div:nth-child(3),
-        .resTable>div:nth-child(7),
-        .resTable>div:nth-child(13),
-        .resTable>div:nth-child(27) {margin-left: 10px;}
-        .resTable>div:nth-child(21) {margin-left: 30px;}
+        .resourses h3 {
+            margin-bottom: 10px;
+        }
+     .resTAbout {width:160px;}
+     .resTAbout div {width:160px;}
         
         .resImgMain {border: 0 !important;}
         .resImgMain img {width: 46px; height: auto;}        
@@ -56,7 +65,7 @@
             border-top: 5px solid #ccc;
             gap: 1px;
             font-size: 12px;
-        }
+        }        
         .sev1 {border-color: #ccc;}
         .sev2 {border-color: #85b867;}
         .sev3 {border-color: #677ab8;}
@@ -88,6 +97,8 @@
         #lvl4 {color: #9a67b8;}
         #lvl1S {color: #b8b767;}
         #lvl2S {color: #b88c67;}
+        #lvlexp {color: #67acb8;}
+
 
         /* Ресурсы Таблица СтоимостьПостройки START */
         .resBldCost {
@@ -169,40 +180,76 @@
 </head>
 <body>
     <h1>Anno 1404</h1>
-    <h2>North: <span id="lvl1">92</span>+<span id="lvl2">148</span>+<span id="lvl3">132</span>+<span id="lvl4">88</span> = 460 (~3500 Adlige) --- South: <span id="lvl1S">90</span>+<span id="lvl2S">210</span> = 300  (~5240 Gesandte)</h2>
+    <h2>Resourses (without any bonuses)</h2>
 
     <!-- Ресурсы Таблица START -->
-    <div class="resTable">
+<div class="resourses">
+    <div><h3>123</h3>
+        <div class="resTable resTAbout">        
+            <!-- NORTH TECH LVL-1 START -->
+            <div class="resItem sev1">
+                <div class="resLvlNeed"><p id="lvl1">Prerequisites</p></div> <!-- Условие -->
+                <div class="resImgMain"><img src="main.png"></div>
+                <div class="resBldNum">
+                             <p id="lvl1">Amount</p></div> <!-- Колличество производств -->
+                <div class="resOutput"><p>Total tons/min</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+                  <div class="resSell"><p>Profit Passive $/1fab</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+                  <div class="resSell"><p>Profit Active $/1fab</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+                  <div class="resSell"><p>Sell Passive $/min</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+                  <div class="resSell"><p>Sell Active $/min</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+                  <div class="resRent"><p>Rent cost</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+                <div class="resBldCost">
+                    <div><p>BulidCost - Gold</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                    <div><p>BulidCost - Wood</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                    <div><p>BulidCost - Tools</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                    <div><p>BulidCost - Stone</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
+                    <div><p>BulidCost - Glass/Tile</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+                </div>
+                <div class="resbldMore">
+                    <div><p>Related productions</p><p></p></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+
+    <div><h3>North: <span id="lvl1">92</span>+<span id="lvl2">148</span>+<span id="lvl3">132</span>+<span id="lvl4">88</span> = 460 (~3500 Adlige)</h3>
+    <div class="resTable">        
         <!-- NORTH TECH LVL-1 START -->
         <div class="resItem sev1">
-            <div class="resLvlNeed"><p id="lvl1">-</p></div> <!-- Условие -->
+            <div class="resLvlNeed"><p id="lvl1">L1</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Sev1L1_Fish.png"></div>
             <div class="resBldNum">
-                         <p id="lvl1">11</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+                         <p id="lvl1">15</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>30</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>30</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>3</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>675</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>270</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>225</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>1,5k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>45</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>30</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
                 <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
                 <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
             </div>
         </div>
         <div class="resItem sev1">
-            <div class="resLvlNeed"><p id="lvl1">-</p></div> <!-- Условие -->
+            <div class="resLvlNeed"><p id="lvl1">60</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Sev1L1_Sidr.png"></div>
             <div class="resBldNum">
-                         <p id="lvl1">13</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+                         <p id="lvl1">17</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>25,5</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>30</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>3</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>765</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>306</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>255</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>1,7k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>85</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>17</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
                 <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
                 <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
             </div>
@@ -210,74 +257,62 @@
         <!-- NORTH TECH LVL-1 END -->
         
         <!-- NORTH TECH LVL-2 START -->
-        <div class="resItem ug1">
-            <div class="resLvlNeed"><p id="lvl2">-</p></div> <!-- Условие -->
+        <div class="resItem ug1 resItemSpace">
+            <div class="resLvlNeed"><p id="lvl1S">145</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Ug1L1_Prepravi.png"></div>
             <div class="resBldNum">
-                         <p id="lvl1">9</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+                         <p id="lvl1">11</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>22</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>60</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>6</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>990</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>396</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>330</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>6,6k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>55</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>22</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
                 <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
                 <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
             </div>
         </div>
         <div class="resItem sev2">
-            <div class="resLvlNeed"><p id="lvl2">-</p></div> <!-- Условие -->
+            <div class="resLvlNeed"><p id="lvl2">L2</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Sev1L2_ShmotLen.png"></div>
             <div class="resBldNum">
-                         <p id="lvl1">8</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+                         <p id="lvl1">10</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>20</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>165</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>27</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>2,3k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>920</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>650</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>12k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>150</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>70</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
                 <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
                 <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
             </div>
             <div class="resbldMore">
-                <div><p>16</p><p><img src="res/Sev2L2_Canabis.png"></p></div>              
+                <div><p>20</p><p><img src="res/Sev2L2_Canabis.png"></p></div>              
             </div>
         </div>
         <div class="resItem sev2">
-            <div class="resLvlNeed"><p id="lvl2">-</p></div> <!-- Условие -->
-            <div class="resImgMain"><img src="res/Sev3L2_Tools.png"></div>
-            <div class="resBldNum">
-                         <p id="lvl1">4</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
-            <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
-                <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
-            </div>
-            <div class="resbldMore">
-                <div><p>2</p><p><img src="res/Mine_IronCraft.png"></p></div>              
-                <div><p>2</p><p><img src="res/Mine_Iron.png"></p></div>              
-                <div><p>2</p><p><img src="res/Mine_Coal.png"></p></div>              
-            </div>
-        </div>
-        <div class="resItem sev2">
-            <div class="resLvlNeed"><p id="lvl2">-</p></div> <!-- Условие -->
+            <div class="resLvlNeed"><p id="lvl2">240</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Sev3L2_Rope.png"></div>
             <div class="resBldNum">
                          <p id="lvl1">8</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+            <div class="resOutput"><p>16</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>140</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>18</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>1,6k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>624</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>480</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>8,8k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>136</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>56</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
                 <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
                 <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
             </div>
@@ -285,22 +320,49 @@
                 <div><p>8</p><p><img src="res/Sev2L2_Canabis.png"></p></div>              
             </div>
         </div>
+        <div class="resItem sev2">
+            <div class="resLvlNeed"><p id="lvl2">240</p></div> <!-- Условие -->
+            <div class="resImgMain"><img src="res/Sev3L2_Tools.png"></div>
+            <div class="resBldNum">
+                         <p id="lvl1">4</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>8</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>125</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>17</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>720</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>288</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>220</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+            <div class="resBldCost">
+                <div><p>7,8k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>112</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>46</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>28</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
+                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+            </div>
+            <div class="resbldMore">
+                <div><p>2</p><p><img src="res/Mine_IronCraft.png"></p></div>              
+                <div><p>2</p><p><img src="res/Mine_Iron.png"></p></div>              
+                <div><p>2</p><p><img src="res/Mine_Coal.png"></p></div>              
+            </div>
+        </div>        
         <!-- NORTH TECH LVL-2 END -->
 
         <!-- NORTH TECH LVL-3 START -->
-        <div class="resItem sev3">
-            <div class="resLvlNeed"><p id="lvl3">-</p></div> <!-- Условие -->
+        <div class="resItem sev3 resItemSpace">
+            <div class="resLvlNeed"><p id="lvl3">L3</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Sev1L3_Bread.png"></div>
             <div class="resBldNum">
                          <p id="lvl1">8</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+            <div class="resOutput"><p>32</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>173</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>14</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>2,1k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>832</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>720</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
-                <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
+                <div><p>17,6k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>232</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>104</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>72</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
                 <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
             </div>
             <div class="resbldMore">
@@ -309,38 +371,67 @@
             </div>
         </div>
         <div class="resItem sev3">
-            <div class="resLvlNeed"><p id="lvl3">-</p></div> <!-- Условие -->
+            <div class="resLvlNeed"><p id="lvl3">510</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Sev1L3_Beer.png"></div>
             <div class="resBldNum">
-                         <p id="lvl1">8</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+                         <p id="lvl1">9</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>13,5</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>100</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>14</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>1,3k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>527</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>405</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
-                <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
+                <div><p>14k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>162</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>72</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>90</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
                 <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
             </div>
             <div class="resbldMore">
-                <div><p>8</p><p><img src="res/Sev2L3_Wheat.png"></p></div>
-                <div><p>8</p><p><img src="res/Sev2L2_Grass.png"></p></div>
+                <div><p>9</p><p><img src="res/Sev2L3_Wheat.png"></p></div>
+                <div><p>9</p><p><img src="res/Sev2L2_Grass.png"></p></div>
             </div>
         </div>
         <div class="resItem sev3">
-            <div class="resLvlNeed"><p id="lvl3">-</p></div> <!-- Условие -->
+            <div class="resLvlNeed"><p id="lvl3">510</p></div> <!-- Условие -->
+            <div class="resImgMain"><img src="res/Sev3L3_Glass.png"></div>
+            <div class="resBldNum">
+                         <p id="lvl1">4</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>4</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>115</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>13</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>680</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>272</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>220</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+            <div class="resBldCost">
+                <div><p>7,8k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>72</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>40</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>64</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
+                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+            </div>
+            <div class="resbldMore">
+                <div><p>2</p><p><img src="res/Mine_Quartz.png"></p></div>
+                <div><p>2</p><p><img src="res/Sev2L3_Potash.png"></p></div>
+            </div>
+        </div>      
+        <div class="resItem sev3">
+            <div class="resLvlNeed"><p id="lvl3">690</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Sev1L3_ShmotKoga.png"></div>
             <div class="resBldNum">
                          <p id="lvl1">4</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+            <div class="resOutput"><p>16</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>323</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>87</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>1,6k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>656</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>310</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
-                <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
+                <div><p>9,9k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>94</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>58</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>82</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
                 <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
             </div>
             <div class="resbldMore">
@@ -351,65 +442,54 @@
             </div>
         </div>
         <div class="resItem sev3">
-            <div class="resLvlNeed"><p id="lvl3">-</p></div> <!-- Условие -->
+            <div class="resLvlNeed"><p id="lvl3">940</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Sev1L2_Book.png"></div>
             <div class="resBldNum">
-                         <p id="lvl1">4</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+                         <p id="lvl1">3</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>9</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>375</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>27</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>1,1k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>450</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>370</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
-                <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+                <div><p>13,8k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>55</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>37</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>60</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
+                <div><p>30</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
             </div>
             <div class="resbldMore">
-                <div><p>8</p><p><img src="res/Ug2L1_Indigo.png"></p></div>
+                <div><p>6</p><p><img src="res/Ug2L1_Indigo.png"></p></div>
                 <div><p>2</p><p><img src="res/Sev2L3_Papper.png"></p></div>
-                <div><p>4</p><p><img src="res/Mine_Wood.png"></p></div>
+                <div><p>3</p><p><img src="res/Mine_Wood.png"></p></div>
             </div>
         </div>
         <div class="resItem sev3">
-            <div class="resLvlNeed"><p id="lvl3">-</p></div> <!-- Условие -->
-            <div class="resImgMain"><img src="res/Sev3L3_Glass.png"></div>
+            <div class="resLvlNeed"><p id="lvl3">2,9k </p><p id="lvl4">3k</p></div> <!-- Условие -->
+            <div class="resImgMain"><img src="res/Sev1L3_Podsvechnik.png"></div>
             <div class="resBldNum">
                          <p id="lvl1">4</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+            <div class="resOutput"><p>8</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>710</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>128</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>3,88k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>1,55k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>1040</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
-                <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+                <div><p>33,8k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>255</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>155</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>304</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
+                <div><p>40</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
             </div>
             <div class="resbldMore">
-                <div><p>2</p><p><img src="res/Mine_Quartz.png"></p></div>
-                <div><p>2</p><p><img src="res/Sev2L3_Potash.png"></p></div>
-            </div>
-        </div>
-        <div class="resItem sev3">
-            <div class="resLvlNeed"><p id="lvl3">-</p></div> <!-- Условие -->
-            <div class="resImgMain"><img src="res/Sev3L3_Weapons.png"></div>
-            <div class="resBldNum">
-                         <p id="lvl1">1</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
-            <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
-                <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
-            </div>
-            <div class="resbldMore">
-                <div><p>1</p><p><img src="res/Mine_IronCraft.png"></p></div>
-                <div><p>1</p><p><img src="res/Mine_Iron.png"></p></div>
-                <div><p>1</p><p><img src="res/Mine_Coal.png"></p></div>
+                <div><p>6</p><p><img src="res/Sev2L4_Candle.png"></p></div>
+                <div><p>12</p><p><img src="res/Sev2L4_Honey.png"></p></div>
+                <div><p>6</p><p><img src="res/Sev2L2_Canabis.png"></p></div>
+                <div><p>3</p><p><img src="res/Mine_CopperCraft.png"></p></div>
+                <div><p>3</p><p><img src="res/Mine_Copper.png"></p></div>
+                <div><p>2</p><p><img src="res/Mine_Coal.png"></p></div>
             </div>
         </div>
         <!-- NORTH TECH LVL-3 END -->
@@ -417,19 +497,22 @@
 
 
         <!-- NORTH TECH LVL-4 START -->
-        <div class="resItem sev4">
-            <div class="resLvlNeed"><p id="lvl4">-</p></div> <!-- Условие -->
+        <div class="resItem sev4 resItemSpace">
+            <div class="resLvlNeed"><p id="lvl4">L4</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Sev1L4_Meat.png"></div>
             <div class="resBldNum">
                          <p id="lvl1">4</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+            <div class="resOutput"><p>10</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>74</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resRent"><p>-2,5</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>1,25k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>500</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>510</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
-                <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
+                <div><p>18,7k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>118</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>66</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>106</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
                 <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
             </div>
             <div class="resbldMore">
@@ -440,19 +523,47 @@
             </div>
         </div>
         <div class="resItem sev4">
-            <div class="resLvlNeed"><p id="lvl4">-</p></div> <!-- Условие -->
+            <div class="resLvlNeed"><p id="lvl4">950</p></div> <!-- Условие -->
+            <div class="resImgMain"><img src="res/Sev1L4_Shmot1Sherst.png"></div>
+            <div class="resBldNum">
+                         <p id="lvl1">3</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>7,5</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>345</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>54</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>1,45k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>578</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>415</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+            <div class="resBldCost">
+                <div><p>9,45k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>53</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>41</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>55</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
+                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+            </div>
+            <div class="resbldMore">
+                <div><p>3</p><p><img src="res/Sev2L4_Fur.png"></p></div>
+                <div><p>1</p><p><img src="res/Mine_SaltCraft.png"></p></div>
+                <div><p>1</p><p><img src="res/Mine_Salt.png"></p></div>
+                <div><p>1</p><p><img src="res/Mine_Coal.png"></p></div>
+            </div>
+        </div>
+        <div class="resItem sev4">
+            <div class="resLvlNeed"><p id="lvl4">1500</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Sev1L4_Vino.png"></div>
             <div class="resBldNum">
                          <p id="lvl1">4</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+            <div class="resOutput"><p>8</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>416</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>56</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>2,4k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>960</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>735</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
-                <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+                <div><p>29,8k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>232</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>128</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>228</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
+                <div><p>36</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
             </div>
             <div class="resbldMore">
                 <div><p>12</p><p><img src="res/Sev2L4_Grape.png"></p></div>
@@ -464,86 +575,21 @@
             </div>
         </div>
         <div class="resItem sev4">
-            <div class="resLvlNeed"><p id="lvl4">-</p></div> <!-- Условие -->
-            <div class="resImgMain"><img src="res/Sev1L4_Shmot1Sherst.png"></div>
-            <div class="resBldNum">
-                         <p id="lvl1">3</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
-            <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
-                <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
-            </div>
-            <div class="resbldMore">
-                <div><p>3</p><p><img src="res/Sev2L4_Fur.png"></p></div>
-                <div><p>1</p><p><img src="res/Mine_SaltCraft.png"></p></div>
-                <div><p>1</p><p><img src="res/Mine_Salt.png"></p></div>
-                <div><p>1</p><p><img src="res/Mine_Coal.png"></p></div>
-            </div>
-        </div>
-        <div class="resItem sev4">
-            <div class="resLvlNeed"><p id="lvl4">-</p></div> <!-- Условие -->
-            <div class="resImgMain"><img src="res/Sev1L4_Shmot2Gold.png"></div>
-            <div class="resBldNum">
-                         <p id="lvl1">2</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
-            <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
-                <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
-            </div>
-            <div class="resbldMore">
-                <div><p>4</p><p><img src="res/Ug1L1_Silk.png"></p></div>
-                <div><p>2</p><p><img src="res/Mine_GoldCraft.png"></p></div>
-                <div><p>2</p><p><img src="res/Mine_Gold.png"></p></div>
-                <div><p>2</p><p><img src="res/Mine_Coal.png"></p></div>
-            </div>
-        </div>
-        <div class="resItem sev4">
-            <div class="resLvlNeed"><p id="lvl4">-</p></div> <!-- Условие -->
-            <div class="resImgMain"><img src="res/Sev1L3_Podsvechnik.png"></div>
-            <div class="resBldNum">
-                         <p id="lvl1">4</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
-            <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
-                <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
-            </div>
-            <div class="resbldMore">
-                <div><p>6</p><p><img src="res/Sev2L4_Candle.png"></p></div>
-                <div><p>12</p><p><img src="res/Sev2L4_Honey.png"></p></div>
-                <div><p>6</p><p><img src="res/Sev2L2_Canabis.png"></p></div>
-                <div><p>4</p><p><img src="res/Mine_CopperCraft.png"></p></div>
-                <div><p>4</p><p><img src="res/Mine_Copper.png"></p></div>
-                <div><p>2</p><p><img src="res/Mine_Coal.png"></p></div>
-            </div>
-        </div>
-        <div class="resItem sev4">
-            <div class="resLvlNeed"><p id="lvl4">-</p></div> <!-- Условие -->
+            <div class="resLvlNeed"><p id="lvl4">2200</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Sev1L4_Ochki.png"></div>
             <div class="resBldNum">
                          <p id="lvl1">4</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+            <div class="resOutput"><p>8</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>330</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>60</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>1,8k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>720</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>480</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
-                <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
+                <div><p>18,8k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>125</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>85</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>132</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
                 <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
             </div>
             <div class="resbldMore">
@@ -554,156 +600,159 @@
             </div>
         </div>
         <div class="resItem sev4">
-            <div class="resLvlNeed"><p id="lvl4">-</p></div> <!-- Условие -->
-            <div class="resImgMain"><img src="res/Sev3L4_Maschines.png"></div>
+            <div class="resLvlNeed"><p id="lvl4">4000</p></div> <!-- Условие -->
+            <div class="resImgMain"><img src="res/Sev1L4_Shmot2Gold.png"></div>
             <div class="resBldNum">
-                         <p id="lvl1">4</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+                         <p id="lvl1">2</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>6</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>610</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>112</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>1,66k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>664</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>440</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
-                <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+                <div><p>15,9k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>104</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>76</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>84</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
+                <div><p>30</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
             </div>
             <div class="resbldMore">
-                <div><p>6</p><p><img src="res/Sev3L2_Rope.png"></p></div>
-                <div><p>6</p><p><img src="res/Sev2L2_Canabis.png"></p></div>
-                <div><p>8</p><p><img src="res/Mine_Wood.png"></p></div>
-            </div>
-        </div>
-        <div class="resItem sev4">
-            <div class="resLvlNeed"><p id="lvl4">-</p></div> <!-- Условие -->
-            <div class="resImgMain"><img src="res/Sev3L4_Canon.png"></div>
-            <div class="resBldNum">
-                         <p id="lvl1">4</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
-            <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
-                <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
-            </div>
-            <div class="resbldMore">
-                <div><p>8</p><p><img src="res/Mine_Wood.png"></p></div>
-                <div><p>3</p><p><img src="res/Mine_IronCraft.png"></p></div>
-                <div><p>3</p><p><img src="res/Mine_Iron.png"></p></div>
-                <div><p>3</p><p><img src="res/Mine_Coal.png"></p></div>
+                <div><p>4</p><p><img src="res/Ug1L1_Silk.png"></p></div>
+                <div><p>2</p><p><img src="res/Mine_GoldCraft.png"></p></div>
+                <div><p>2</p><p><img src="res/Mine_Gold.png"></p></div>
+                <div><p>2</p><p><img src="res/Mine_Coal.png"></p></div>
             </div>
         </div>
         <!-- NORTH TECH LVL-4 END -->
-        
+        </div></div>
 
 
 
 
 
-        
 
-        <!-- SOUTH TECH LVL-1 START -->
+
+
+        <div><h3>South: <span id="lvl1S">90</span>+<span id="lvl2S">210</span> = 300  (~5240 Gesandte)</h3>
+        <div class="resTable">
+            <!-- SOUTH TECH LVL-1 START -->
         <div class="resItem ug1">
-            <div class="resLvlNeed"><p id="lvl1S">-</p></div> <!-- Условие -->
+            <div class="resLvlNeed"><p id="lvlexp" title="Sultan Prestige EXP">50</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Ug1L1_Finiki.png"></div>
             <div class="resBldNum">
-                         <p id="lvl1">4</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+                         <p id="lvl1">12</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>36</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resRent"><p>-15</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resRent"><p>-33</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>360</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>144</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>540</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>3,9k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>36</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>24</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
                 <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+                <div><p>-</p><p><img src="res/1Cost_Tile.png"></p></div> <!-- Стекло -->
             </div>
         </div>
         <div class="resItem ug1">
-            <div class="resLvlNeed"><p id="lvl1S">-</p></div> <!-- Условие -->
+            <div class="resLvlNeed"><p id="lvl1S" title="Nomads">145</p><p id="lvlexp" title="Sultan Prestige EXP">50</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Ug1L1_Milk.png"></div>
             <div class="resBldNum">
-                         <p id="lvl1">4</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+                         <p id="lvl1">11</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>16,5</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>40</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>4</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>660</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>264</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>220</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>3,9k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>55</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>11</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
                 <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+                <div><p>-</p><p><img src="res/1Cost_Tile.png"></p></div> <!-- Стекло -->
             </div>
         </div>
         <div class="resItem ug1">
-            <div class="resLvlNeed"><p id="lvl1S">-</p></div> <!-- Условие -->
+            <div class="resLvlNeed"><p id="lvl1S" title="Nomads">295</p><p id="lvlexp" title="Sultan Prestige EXP">100</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Ug1L1_Kovri.png"></div>
             <div class="resBldNum">
-                         <p id="lvl1">2</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+                         <p id="lvl1">5</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>7,5</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>296</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>56</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>2k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>803</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>525</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>10,8k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>75</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>35</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
                 <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+                <div><p>-</p><p><img src="res/1Cost_Tile.png"></p></div> <!-- Стекло -->
             </div>
             <div class="resbldMore">
-                <div><p>2</p><p><img src="res/Ug1L1_Silk.png"></p></div>
-                <div><p>2</p><p><img src="res/Ug2L1_Indigo.png"></p></div>
+                <div><p>5</p><p><img src="res/Ug1L1_Silk.png"></p></div>
+                <div><p>5</p><p><img src="res/Ug2L1_Indigo.png"></p></div>
             </div>
         </div>
         <div class="resItem ug1">
-            <div class="resLvlNeed"><p id="lvl1S">-</p></div> <!-- Условие -->
+            <div class="resLvlNeed"><p id="lvl1S" title="Nomads">295</p><p id="lvlexp" title="Sultan Prestige EXP">100</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Ug1L1_Silk.png"></div>
             <div class="resBldNum">
                          <p id="lvl1">4</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+            <div class="resOutput"><p>6</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>54</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>6,5</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>315</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>126</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>100</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>3,4k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>20</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>8</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
                 <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+                <div><p>-</p><p><img src="res/1Cost_Tile.png"></p></div> <!-- Стекло -->
             </div>
         </div>
         <div class="resItem ug1">
-            <div class="resLvlNeed"><p id="lvl1S">-</p></div> <!-- Условие -->
+            <div class="resLvlNeed"><p id="lvl1S" title="Nomads">295</p><p id="lvlexp" title="Sultan Prestige EXP">100</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Ug2L1_Indigo.png"></div>
             <div class="resBldNum">
                          <p id="lvl1">4</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+            <div class="resOutput"><p>6</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>51</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>8,5</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>285</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>114</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>80</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>3,6k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>20</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>8</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
                 <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+                <div><p>-</p><p><img src="res/1Cost_Tile.png"></p></div> <!-- Стекло -->
             </div>
         </div>
         <div class="resItem ug1">
-            <div class="resLvlNeed"><p id="lvl1S">-</p></div> <!-- Условие -->
+            <div class="resLvlNeed"><p id="lvl1S" title="Nomads">440</p><p id="lvlexp" title="Sultan Prestige EXP">250</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Ug3L1_Tile.png"></div>
             <div class="resBldNum">
                          <p id="lvl1">4</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+            <div class="resOutput"><p>9,6</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>196</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>31</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>1,1k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>442</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>320</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>14,4k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>156</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>88</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
                 <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+                <div><p>-</p><p><img src="res/1Cost_Tile.png"></p></div> <!-- Стекло -->
             </div>
             <div class="resbldMore">
                 <div><p>8</p><p><img src="res/Mine_Clay.png"></p></div>
@@ -715,88 +764,184 @@
 
 
         <!-- SOUTH TECH LVL-2 START -->
-        <div class="resItem ug2">
-            <div class="resLvlNeed"><p id="lvl2S">-</p></div> <!-- Условие -->
+        <div class="resItem ug2 resItemSpace">
+            <div class="resLvlNeed"><p id="lvl2S" title="Envoys">L2</p><p id="lvlexp" title="Sultan Prestige EXP">500</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Ug1L2_Coffee.png"></div>
             <div class="resBldNum">
-                         <p id="lvl1">2</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+                         <p id="lvl1">6</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>6</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>360</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>77</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>2,4k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>972</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>510</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>24,6k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>54</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>108</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
                 <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+                <div><p>162</p><p><img src="res/1Cost_Tile.png"></p></div> <!-- Стекло -->
             </div>
             <div class="resbldMore">
-                <div><p>2</p><p><img src="res/Ug2L2_CoffeeFarm.png"></p></div>
+                <div><p>12</p><p><img src="res/Ug2L2_CoffeeFarm.png"></p></div>
             </div>
         </div>
         <div class="resItem ug2">
-            <div class="resLvlNeed"><p id="lvl2S">-</p></div> <!-- Условие -->
+            <div class="resLvlNeed"><p id="lvl2S" title="Envoys">1k</p><p id="lvlexp" title="Sultan Prestige EXP">500</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Ug1L2_PerlNecklace.png"></div>
             <div class="resBldNum">
-                         <p id="lvl1">3</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+                         <p id="lvl1">7</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>7</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>303</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>55</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>2,9k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>1,2k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>770</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>21k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>154</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>105</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
                 <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+                <div><p>189</p><p><img src="res/1Cost_Tile.png"></p></div> <!-- Стекло -->
             </div>
             <div class="resbldMore">
-                <div><p>3</p><p><img src="res/Ug1L2_Perl.png"></p></div>
+                <div><p>7</p><p><img src="res/Ug1L2_Perl.png"></p></div>
             </div>
         </div>
         <div class="resItem ug2">
-            <div class="resLvlNeed"><p id="lvl2S">-</p></div> <!-- Условие -->
+            <div class="resLvlNeed"><p id="lvl2S" title="Envoys">2,6k</p><p id="lvlexp" title="Sultan Prestige EXP">1k</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Ug1L2_Parfum.png"></div>
             <div class="resBldNum">
-                         <p id="lvl1">2</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+                         <p id="lvl1">5</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>5</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>413</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>75</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>2,8k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>1,1k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>750</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>48,5k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>200</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>100</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
                 <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+                <div><p>240</p><p><img src="res/1Cost_Tile.png"></p></div> <!-- Стекло -->
             </div>
             <div class="resbldMore">
-                <div><p>6</p><p><img src="res/Ug2L2_Rose.png"></p></div>
+                <div><p>15</p><p><img src="res/Ug2L2_Rose.png"></p></div>
             </div>
         </div>
         <div class="resItem ug2">
-            <div class="resLvlNeed"><p id="lvl2S">-</p></div> <!-- Условие -->
+            <div class="resLvlNeed"><p id="lvl2S" title="Envoys">4,3k</p><p id="lvlexp" title="Sultan Prestige EXP">2k</p></div> <!-- Условие -->
             <div class="resImgMain"><img src="res/Ug1L2_Candies.png"></div>
             <div class="resBldNum">
-                         <p id="lvl1">1</p></div> <!-- Колличество производств -->
-            <div class="resOutput"><p>-</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность -->
-              <div class="resSell"><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход -->
-              <div class="resRent"><p>-</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+                         <p id="lvl1">3</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>12</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>540</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>72</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>2,3k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>936</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>720</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
             <div class="resBldCost">
-                <div><p>-</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
-                <div><p>-</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
-                <div><p>-</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>21,3k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>90</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>108</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
                 <div><p>-</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
-                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+                <div><p>216</p><p><img src="res/1Cost_Tile.png"></p></div> <!-- Стекло -->
             </div>
             <div class="resbldMore">
-                <div><p>2</p><p><img src="res/Ug2L2_Almond.png"></p></div>
-                <div><p>1</p><p><img src="res/Ug2L2_Suggar.png"></p></div>
-                <div><p>2</p><p><img src="res/Ug2L2_Cane.png"></p></div>
+                <div><p>6</p><p><img src="res/Ug2L2_Almond.png"></p></div>
+                <div><p>3</p><p><img src="res/Ug2L2_Suggar.png"></p></div>
+                <div><p>6</p><p><img src="res/Ug2L2_Cane.png"></p></div>
             </div>
         </div>
         <!-- SOUTH TECH LVL-2 END -->
-        
-            
-    </div>
+        </div></div>
+
+
+
+
+
+
+        <div><h3>Weapons</h3>
+        <div class="resTable">            
+            <!-- WEAPON TECH START -->
+        <div class="resItem sev3">
+            <div class="resLvlNeed"><p id="lvl3">L3</p></div> <!-- Условие -->
+            <div class="resImgMain"><img src="res/Sev3L3_Weapons.png"></div>
+            <div class="resBldNum">
+                         <p id="lvl1">2</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>4</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>90</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>12</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>520</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>208</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>160</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+            <div class="resBldCost">
+                <div><p>8,8k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>86</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>34</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>40</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
+                <div><p>-</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+            </div>
+            <div class="resbldMore">
+                <div><p>2</p><p><img src="res/Mine_IronCraft.png"></p></div>
+                <div><p>2</p><p><img src="res/Mine_Iron.png"></p></div>
+                <div><p>2</p><p><img src="res/Mine_Coal.png"></p></div>
+            </div>
+        </div>
+        <div class="resItem sev4">
+            <div class="resLvlNeed"><p id="lvl4">L4</p></div> <!-- Условие -->
+            <div class="resImgMain"><img src="res/Sev3L4_Maschines.png"></div>
+            <div class="resBldNum">
+                         <p id="lvl1">2</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>3</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>279</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>16</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>878</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>351</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>320</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+            <div class="resBldCost">
+                <div><p>9,5k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>57</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>39</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>20</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
+                <div><p>16</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+            </div>
+            <div class="resbldMore">
+                <div><p>3</p><p><img src="res/Sev3L2_Rope.png"></p></div>
+                <div><p>3</p><p><img src="res/Sev2L2_Canabis.png"></p></div>
+                <div><p>4</p><p><img src="res/Mine_Wood.png"></p></div>
+            </div>
+        </div>
+        <div class="resItem sev4">
+            <div class="resLvlNeed"><p id="lvl4">950</p></div> <!-- Условие -->
+            <div class="resImgMain"><img src="res/Sev3L4_Canon.png"></div>
+            <div class="resBldNum">
+                         <p id="lvl1">2</p></div> <!-- Колличество производств -->
+            <div class="resOutput"><p>2</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Производительность тонн/мин -->
+              <div class="resSell"><p>263</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Пассив голд/пр-во -->
+              <div class="resSell"><p>9</p><p><img src="res/1Cost_Output.png"></p></div> <!-- Рентабельность Актив голд/пр-во -->
+              <div class="resSell"><p>845</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Пассивный-->
+              <div class="resSell"><p>338</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Доход Быстрые продажи-->
+              <div class="resRent"><p>320</p><p><img src="res/1Cost_Rent.png"></p></div> <!-- Обслуживание -->
+            <div class="resBldCost">
+                <div><p>18k</p><p><img src="res/1Cost_Gold.png"></p></div> <!-- Золото -->
+                <div><p>128</p><p><img src="res/1Cost_Wood.png"></p></div> <!-- Дерево -->
+                <div><p>64</p><p><img src="res/1Cost_Tools.png"></p></div> <!-- Инструменты -->
+                <div><p>80</p><p><img src="res/1Cost_Stone.png"></p></div> <!-- Камень -->
+                <div><p>48</p><p><img src="res/1Cost_Glass.png"></p></div> <!-- Стекло -->
+            </div>
+            <div class="resbldMore">
+                <div><p>4</p><p><img src="res/Mine_Wood.png"></p></div>
+                <div><p>2</p><p><img src="res/Mine_IronCraft.png"></p></div>
+                <div><p>2</p><p><img src="res/Mine_Iron.png"></p></div>
+                <div><p>2</p><p><img src="res/Mine_Coal.png"></p></div>
+            </div>
+        </div>
+        <!-- WEAPON TECH END -->
+    </div></div>
+
+</div>
     <!-- Ресурсы Таблица END -->
 
 
